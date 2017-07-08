@@ -85,6 +85,15 @@ mysql-traditional: export REFORM_TEST_SOURCE = root@/reform-database?parseTime=t
 mysql-traditional: test
 	make test-db
 
+# run unit tests and integration tests for MySQL (mysqlx driver for X Protocol)
+mysqlx: export REFORM_DATABASE = mysql
+mysqlx: export REFORM_DRIVER = mysqlx
+mysqlx: export REFORM_ROOT_SOURCE = tcp://root@127.0.0.1:33060/
+mysqlx: export REFORM_INIT_SOURCE = tcp://root@127.0.0.1:33060/reform-database?time_zone=UTC&sql_mode=ANSI
+mysqlx: export REFORM_TEST_SOURCE = tcp://root@127.0.0.1:33060/reform-database?time_zone=UTC&sql_mode=ANSI
+mysqlx: test
+	make test-db
+
 # run unit tests and integration tests for SQLite3
 sqlite3: export REFORM_DATABASE = sqlite3
 sqlite3: export REFORM_DRIVER = sqlite3
