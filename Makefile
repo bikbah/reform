@@ -44,7 +44,7 @@ test-db:
 		internal/test/sql/$(REFORM_DATABASE)_drop.sql
 	reform-db -db-driver="$(REFORM_DRIVER)" -db-source="$(REFORM_ROOT_SOURCE)" exec \
 		internal/test/sql/$(REFORM_DATABASE)_create.sql
-	reform-db -db-driver="$(REFORM_DRIVER)" -db-source="$(REFORM_INIT_SOURCE)" exec \
+	reform-db -db-driver="$(REFORM_DRIVER)" -db-source="$(REFORM_INIT_SOURCE)" exec -split \
 		internal/test/sql/$(REFORM_DATABASE)_init.sql \
 		internal/test/sql/data.sql \
 		internal/test/sql/$(REFORM_DATABASE)_data.sql \
