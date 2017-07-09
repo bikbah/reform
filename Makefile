@@ -9,6 +9,7 @@ REFORM_TEST_FLAGS ?=
 deps:
 	go get -u github.com/lib/pq
 	go get -u github.com/go-sql-driver/mysql
+	go get -u github.com/AlekSi/mysqlx
 	go get -u github.com/mattn/go-sqlite3
 	go get -u github.com/denisenkom/go-mssqldb
 
